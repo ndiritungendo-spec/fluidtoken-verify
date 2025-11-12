@@ -1,4 +1,5 @@
 require("@nomicfoundation/hardhat-verify");
+require("dotenv").config();   // <-- optional but recommended
 
 module.exports = {
   solidity: {
@@ -13,12 +14,13 @@ module.exports = {
   networks: {
     polygon: {
       url: "https://polygon-rpc.com",
-      accounts: ["YOUR_PRIVATE_KEY"] // optional, only needed for deployment
+      // Remove the private key if you only want to **verify** (not deploy)
+      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
     }
   },
   etherscan: {
     apiKey: {
-      polygon: "R45T4FW6FEAE8VKVH1CI64RMIPGFKBEWG2" // Get free: https://polygonscan.com/myapikey
+      polygon: process.env.POLYGONSCAN_API_KEY || "R45T4FW6FEAE8VKVH1CI64RMIPGFKBEWG2"
     }
   }
 };
