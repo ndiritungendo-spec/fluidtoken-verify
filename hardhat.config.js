@@ -18,7 +18,7 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      polygon: "YOUR_POLYGONSCAN_API_KEY" // Get free: https://polygonscan.com/myapikey
+      polygon: "R45T4FW6FEAE8VKVH1CI64RMIPGFKBEWG2" // Get free: https://polygonscan.com/myapikey
     }
   }
 };
